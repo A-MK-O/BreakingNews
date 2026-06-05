@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking News!</title>
+    <style>
+        /* This sets up the pitch-black background and default text */
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Pushes content to top and bottom */
+            overflow: hidden; /* Prevents weird scrollbars */
+        }
+
+        /* Styling for the moving text banner at the top */
+        .marquee-container {
+            background-color: black;
+            width: 100%;
+            padding: 15px 0;
+            border-bottom: 2px solid red; /* Optional: adds a nice separation line */
+        }
+
+        .marquee-text {
+            color: red;
+            font-size: 3rem;
+            font-weight: bold;
+            white-space: nowrap;
+            animation: scroll-left 10s linear infinite;
+        }
+
+        /* The animation that makes the text move */
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Styling for the sweet message at the bottom */
+        .bottom-message {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 30px;
+            color: #ffb6c1; /* A soft light pink, but you can change this to white or red! */
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-container">
+        <div class="marquee-text">BREAKING NEWS! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BREAKING NEWS! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BREAKING NEWS!</div>
+    </div>
+
+    <div class="bottom-message">
+        Did you know that there is someone who loves you too?!
+    </div>
+
+</body>
+</html>
