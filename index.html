@@ -46,15 +46,15 @@
         .bottom-container {
             display: inline-flex;
             flex-direction: column;
-            align-items: center; /* Keeps the text blocks and divider aligned together */
-            align-self: center;  /* Centers the entire group on the screen */
+            align-items: flex-start; /* Aligns the text blocks and divider to the left of the container */
+            align-self: center;      /* Centers the entire group on the screen */
             padding: 40px;
-            max-width: 90%;      /* Keeps it responsive on mobile screens */
+            max-width: 90%;          /* Keeps it responsive on mobile screens */
         }
 
         /* Message 2 style (Top message at the bottom) */
         .bottom-message-2 {
-            text-align: center;
+            text-align: left; /* Left aligns the text body */
             font-size: 1.5rem;
             color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
@@ -64,7 +64,7 @@
 
         /* Message 1 style (Bottom message at the bottom) */
         .bottom-message {
-            text-align: center;
+            text-align: left; /* Left aligns the text body */
             font-size: 1.5rem;
             color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
@@ -72,7 +72,7 @@
             line-height: 1.4;
         }
 
-        /* Styling for the small date labels on top of the text */
+        /* Styling for the small date labels starting with the text */
         .entry-date {
             display: block;    /* Forces the date onto its own line on top */
             font-size: 0.9rem;  /* Makes it noticeably smaller */
@@ -80,6 +80,7 @@
             letter-spacing: 2px;
             margin-bottom: 6px;
             opacity: 0.7;       /* Softens the color slightly so the message stands out */
+            text-align: left;   /* Forces the date to start on the left */
         }
 
         /* The divider line that matches the exact width of your text blocks */
