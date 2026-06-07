@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Breaking News!</title>
     <style>
         /* Base setup for the pitch-black full screen */
@@ -13,10 +13,11 @@
             margin: 0;
             padding: 0;
             height: 100vh;
+            width: 100vw;
             display: flex;
             flex-direction: column;
             justify-content: space-between; /* Pushes content to absolute top and bottom */
-            overflow: hidden; /* Prevents unwanted scrollbars from the moving text */
+            overflow: hidden; /* Stops mobile browsers from creating side-scrollbars */
         }
 
         /* Top container for the moving text */
@@ -25,62 +26,70 @@
             width: 100%;
             padding: 15px 0;
             border-bottom: 2px solid red; /* Line underneath the breaking news */
+            overflow: hidden; /* Key fix for mobile layout scaling */
+            position: relative;
         }
 
         /* The moving text styling */
         .marquee-text {
+            display: inline-block;
             color: red;
-            font-size: 3rem;
+            font-size: 2.5rem; /* Slightly adapted size for mobile balance */
             font-weight: bold;
             white-space: nowrap;
-            animation: scroll-left 10s linear infinite;
+            padding-left: 100%; /* Starts the text completely off-screen */
+            animation: scroll-left 12s linear infinite;
         }
 
-        /* The animation mechanics for the moving text */
+        /* The animation mechanics optimized for mobile rendering */
         @keyframes scroll-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
         }
 
         /* Container that groups your bottom blocks together */
         .bottom-container {
-            display: inline-flex;
+            display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Aligns the text blocks and divider to the left of the container */
+            align-items: flex-start; /* Aligns the text blocks and divider to the left */
             align-self: center;      /* Centers the entire group on the screen */
-            padding: 40px;
-            max-width: 90%;          /* Keeps it responsive on mobile screens */
+            padding: 20px;           /* Reduced padding for smaller phone screens */
+            width: 85%;              /* Sets a safe boundary on mobile boundaries */
+            box-sizing: border-box;
+            margin-bottom: 20px;     /* Keeps it slightly off the absolute screen edge on mobile */
         }
 
         /* Message 2 style (Top message at the bottom) */
         .bottom-message-2 {
-            text-align: left; /* Left aligns the text body */
-            font-size: 1.5rem;
+            text-align: left; 
+            font-size: 1.3rem; /* Scaled down slightly for phone readability */
             color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.4;
+            width: 100%;
         }
 
         /* Message 1 style (Bottom message at the bottom) */
         .bottom-message {
-            text-align: left; /* Left aligns the text body */
-            font-size: 1.5rem;
+            text-align: left; 
+            font-size: 1.3rem; /* Scaled down slightly for phone readability */
             color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
-            margin-top: 15px;
+            margin-top: 12px;
             line-height: 1.4;
+            width: 100%;
         }
 
         /* Styling for the small date labels starting with the text */
         .entry-date {
-            display: block;    /* Forces the date onto its own line on top */
-            font-size: 0.9rem;  /* Makes it noticeably smaller */
+            display: block;    
+            font-size: 0.85rem;  
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 6px;
-            opacity: 0.7;       /* Softens the color slightly so the message stands out */
-            text-align: left;   /* Forces the date to start on the left */
+            opacity: 0.7;       
+            text-align: left;   
         }
 
         /* The divider line that matches the exact width of your text blocks */
@@ -88,7 +97,7 @@
             border: none;
             border-top: 2px solid red;
             width: 100%; 
-            margin: 10px 0;
+            margin: 5px 0;
         }
     </style>
 </head>
