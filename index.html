@@ -52,7 +52,7 @@
             max-width: 90%;      /* Keeps it responsive on mobile screens */
         }
 
-        /* Message 2 style (Now on top) */
+        /* Message 2 style (Top message at the bottom) */
         .bottom-message-2 {
             text-align: center;
             font-size: 1.5rem;
@@ -62,7 +62,7 @@
             line-height: 1.4;
         }
 
-        /* Message 1 style (Now on bottom) */
+        /* Message 1 style (Bottom message at the bottom) */
         .bottom-message {
             text-align: center;
             font-size: 1.5rem;
@@ -83,35 +83,23 @@
 </head>
 <body>
 
-    <!-- TOP: Moving Breaking News Text -->
     <div class="marquee-container">
         <div class="marquee-text">BREAKING NEWS! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BREAKING NEWS! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BREAKING NEWS!</div>
     </div>
 
-    <!-- BOTTOM: Your structured message blocks -->
     <div class="bottom-container">
         
-        <!-- Message 2 is now on top -->
         <div class="bottom-message-2">
-            (<span class="current-date"></span>) Most recent research showes someone in this country looooooves you over there very much
+            5 June: Most recent research showes someone in this country looooooves you over there very much
         </div>
 
-        <!-- The divider line between them -->
         <hr class="bottom-divider">
 
-        <!-- Message 1 is now on bottom -->
         <div class="bottom-message">
-            (<span class="current-date"></span>) Did you know that there is someone who loves you too?!
+            5 June: Did you know that there is someone who loves you too?!
         </div>
 
     </div>
-
-    <!-- Automatically updates the dates to today's date -->
-    <script>
-        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        const today = new Date().toLocaleDateString('en-US', dateOptions);
-        document.querySelectorAll('.current-date').forEach(el => el.textContent = today);
-    </script>
 
 </body>
 </html>
