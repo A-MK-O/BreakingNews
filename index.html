@@ -52,8 +52,8 @@
             max-width: 90%;      /* Keeps it responsive on mobile screens */
         }
 
-        /* Your first message style */
-        .bottom-message {
+        /* Message 2 style (Now on top) */
+        .bottom-message-2 {
             text-align: center;
             font-size: 1.5rem;
             color: #ffb6c1; /* Soft pink */
@@ -62,8 +62,8 @@
             line-height: 1.4;
         }
 
-        /* Your second message style */
-        .bottom-message-2 {
+        /* Message 1 style (Now on bottom) */
+        .bottom-message {
             text-align: center;
             font-size: 1.5rem;
             color: #ffb6c1; /* Soft pink */
@@ -91,18 +91,27 @@
     <!-- BOTTOM: Your structured message blocks -->
     <div class="bottom-container">
         
-        <div class="bottom-message">
-            Did you know that there is someone who loves you too?!
+        <!-- Message 2 is now on top -->
+        <div class="bottom-message-2">
+            (<span class="current-date"></span>) Most recent research showes someone in this country looooooves you over there very much
         </div>
 
         <!-- The divider line between them -->
         <hr class="bottom-divider">
 
-        <div class="bottom-message-2">
-            Most recent research showes someone in this country looooooves you over there very much
+        <!-- Message 1 is now on bottom -->
+        <div class="bottom-message">
+            (<span class="current-date"></span>) Did you know that there is someone who loves you too?!
         </div>
 
     </div>
+
+    <!-- Automatically updates the dates to today's date -->
+    <script>
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const today = new Date().toLocaleDateString('en-US', dateOptions);
+        document.querySelectorAll('.current-date').forEach(el => el.textContent = today);
+    </script>
 
 </body>
 </html>
