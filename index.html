@@ -58,7 +58,7 @@
             font-size: 1.5rem;
             color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             line-height: 1.4;
         }
 
@@ -68,8 +68,18 @@
             font-size: 1.5rem;
             color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
-            margin-top: 10px;
+            margin-top: 15px;
             line-height: 1.4;
+        }
+
+        /* Styling for the small date labels on top of the text */
+        .entry-date {
+            display: block;    /* Forces the date onto its own line on top */
+            font-size: 0.9rem;  /* Makes it noticeably smaller */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+            opacity: 0.7;       /* Softens the color slightly so the message stands out */
         }
 
         /* The divider line that matches the exact width of your text blocks */
@@ -90,13 +100,15 @@
     <div class="bottom-container">
         
         <div class="bottom-message-2">
-            5 June: Most recent research showes someone in this country looooooves you over there very much
+            <span class="entry-date">7 June</span>
+            Most recent research showes someone in this country looooooves you over there very much
         </div>
 
         <hr class="bottom-divider">
 
         <div class="bottom-message">
-            5 June: Did you know that there is someone who loves you too?!
+            <span class="entry-date">5 June</span>
+            Did you know that there is someone who loves you too?!
         </div>
 
     </div>
