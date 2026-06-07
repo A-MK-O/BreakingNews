@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breaking News!</title>
     <style>
-        /* This sets up the pitch-black background and default text */
+        /* Base setup for the pitch-black full screen */
         body {
             background-color: black;
             color: white;
@@ -15,18 +15,19 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Pushes content to top and bottom */
-            overflow: hidden; /* Prevents weird scrollbars */
+            justify-content: space-between; /* Pushes content to absolute top and bottom */
+            overflow: hidden; /* Prevents unwanted scrollbars from the moving text */
         }
 
-        /* Styling for the moving text banner at the top */
+        /* Top container for the moving text */
         .marquee-container {
             background-color: black;
             width: 100%;
             padding: 15px 0;
-            border-bottom: 2px solid red; /* Optional: adds a nice separation line */
+            border-bottom: 2px solid red; /* Line underneath the breaking news */
         }
 
+        /* The moving text styling */
         .marquee-text {
             color: red;
             font-size: 3rem;
@@ -35,30 +36,72 @@
             animation: scroll-left 10s linear infinite;
         }
 
-        /* The animation that makes the text move */
+        /* The animation mechanics for the moving text */
         @keyframes scroll-left {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
 
-        /* Styling for the sweet message at the bottom */
+        /* Container that groups your bottom blocks together */
+        .bottom-container {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center; /* Keeps the text blocks and divider aligned together */
+            align-self: center;  /* Centers the entire group on the screen */
+            padding: 40px;
+            max-width: 90%;      /* Keeps it responsive on mobile screens */
+        }
+
+        /* Your first message style */
         .bottom-message {
             text-align: center;
             font-size: 1.5rem;
-            padding: 30px;
-            color: #ffb6c1; /* A soft light pink, but you can change this to white or red! */
+            color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        /* Your second message style */
+        .bottom-message-2 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ffb6c1; /* Soft pink */
+            letter-spacing: 1px;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        /* The divider line that matches the exact width of your text blocks */
+        .bottom-divider {
+            border: none;
+            border-top: 2px solid red;
+            width: 100%; 
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
 
+    <!-- TOP: Moving Breaking News Text -->
     <div class="marquee-container">
         <div class="marquee-text">BREAKING NEWS! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BREAKING NEWS! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BREAKING NEWS!</div>
     </div>
 
-    <div class="bottom-message">
-        Did you know that there is someone who loves you too?!
+    <!-- BOTTOM: Your structured message blocks -->
+    <div class="bottom-container">
+        
+        <div class="bottom-message">
+            Did you know that there is someone who loves you too?!
+        </div>
+
+        <!-- The divider line between them -->
+        <hr class="bottom-divider">
+
+        <div class="bottom-message-2">
+            Most recent research showes someone in this country looooooves you over there very much
+        </div>
+
     </div>
 
 </body>
