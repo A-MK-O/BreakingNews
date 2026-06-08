@@ -34,7 +34,7 @@
         .marquee-text {
             display: inline-block;
             color: red;
-            font-size: 2.5rem; /* Slightly adapted size for mobile balance */
+            font-size: 2.5rem; /* Scaled for mobile balance */
             font-weight: bold;
             white-space: nowrap;
             padding-left: 100%; /* Starts the text completely off-screen */
@@ -51,34 +51,33 @@
         .bottom-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Aligns the text blocks and divider to the left */
+            align-items: flex-start; /* Aligns the text blocks and dividers to the left */
             align-self: center;      /* Centers the entire group on the screen */
-            padding: 20px;           /* Reduced padding for smaller phone screens */
+            padding: 20px;           /* Mobile-optimized padding */
             width: 85%;              /* Sets a safe boundary on mobile boundaries */
             box-sizing: border-box;
-            margin-bottom: 20px;     /* Keeps it slightly off the absolute screen edge on mobile */
+            margin-bottom: 20px;     /* Keeps it slightly off the absolute screen edge */
         }
 
-        /* Message 2 style (Top message at the bottom) */
-        .bottom-message-2 {
-            text-align: left; 
-            font-size: 1.3rem; /* Scaled down slightly for phone readability */
-            color: #ffb6c1; /* Soft pink */
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-            line-height: 1.4;
-            width: 100%;
-        }
-
-        /* Message 1 style (Bottom message at the bottom) */
+        /* Message styling for all entries */
         .bottom-message {
             text-align: left; 
             font-size: 1.3rem; /* Scaled down slightly for phone readability */
             color: #ffb6c1; /* Soft pink */
             letter-spacing: 1px;
-            margin-top: 12px;
+            margin: 12px 0;
             line-height: 1.4;
             width: 100%;
+        }
+
+        /* First message adjustments to clean up top spacing */
+        .bottom-message:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Last message adjustments to clean up bottom spacing */
+        .bottom-message:last-of-type {
+            margin-bottom: 0;
         }
 
         /* Styling for the small date labels starting with the text */
@@ -109,7 +108,14 @@
 
     <div class="bottom-container">
         
-        <div class="bottom-message-2">
+        <div class="bottom-message">
+            <span class="entry-date">8 June</span>
+            Experts say it is the best to wake up to someone saying I LOVE YOU, so: I LOVE YOU SO MUCH! YAY! I am so happy you are part of my life and so happy to be part of yours &lt;3
+        </div>
+
+        <hr class="bottom-divider">
+        
+        <div class="bottom-message">
             <span class="entry-date">7 June</span>
             Most recent research showes someone in this country looooooves you over there very much
         </div>
